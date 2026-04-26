@@ -1,0 +1,331 @@
+/* ==========================================
+   KEEP - Vivid Note - Custom Styles
+   Design System: Stitch "Vivid Note"
+   ========================================== */
+
+/* === BASE === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Spline Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+/* === MATERIAL SYMBOLS === */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  user-select: none;
+}
+
+.material-symbols-outlined.filled {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* === DIGITAL HIGHLIGHTER EFFECT === */
+.digital-highlighter {
+  box-shadow: inset 0 -0.4em 0 0 #fff000;
+}
+
+/* === MASONRY GRID === */
+.masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+@media (min-width: 768px) {
+  .masonry-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .masonry-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* === PAGE TRANSITIONS === */
+.page-enter {
+  animation: pageSlideIn 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.page-fade-in {
+  animation: pageFadeIn 0.3s ease-out forwards;
+}
+
+@keyframes pageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pageFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* === NOTE CARD ANIMATIONS === */
+.note-card {
+  transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.note-card:hover {
+  transform: translateY(-2px);
+}
+
+.note-card:active {
+  transform: scale(0.97);
+}
+
+.note-card-enter {
+  animation: noteCardEnter 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  opacity: 0;
+}
+
+@keyframes noteCardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* === TOAST ANIMATIONS === */
+.toast-enter {
+  animation: toastSlideIn 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.toast-exit {
+  animation: toastSlideOut 0.3s ease-in forwards;
+}
+
+@keyframes toastSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes toastSlideOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+/* === FAB ANIMATION === */
+.fab-pulse {
+  animation: fabPulse 2s infinite;
+}
+
+@keyframes fabPulse {
+  0%, 100% {
+    box-shadow: 0 8px 30px rgba(0, 64, 224, 0.15);
+  }
+  50% {
+    box-shadow: 0 8px 40px rgba(0, 64, 224, 0.3);
+  }
+}
+
+/* === LOADING SPINNER === */
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(0,0,0,0.1);
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* === NOTE COLOR VARIANTS === */
+.note-color-default { background: #ffffff; }
+.note-color-yellow { background: #fff9c4; }
+.note-color-green { background: #e8f5e9; }
+.note-color-blue { background: #e3f2fd; }
+.note-color-pink { background: #fce4ec; }
+.note-color-purple { background: #f3e5f5; }
+.note-color-orange { background: #fff3e0; }
+.note-color-teal { background: #e0f2f1; }
+
+/* === FORM FOCUS STYLES === */
+input:focus, textarea:focus {
+  outline: none;
+}
+
+/* === SCROLLBAR CUSTOM === */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ccc7aa;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7b785f;
+}
+
+/* === SAFE AREA BOTTOM === */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* === BOTTOM NAV ACTIVE STATE === */
+.nav-btn-active {
+  background: #fff000;
+  color: #1c1b1b;
+  border-radius: 12px;
+}
+
+/* === CONFIRMATION DIALOG === */
+.dialog-overlay {
+  animation: overlayFadeIn 0.2s ease-out forwards;
+}
+
+@keyframes overlayFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.dialog-content {
+  animation: dialogScaleIn 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes dialogScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* === COLOR PICKER DOT === */
+.color-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  border: 2px solid transparent;
+}
+
+.color-dot:hover {
+  transform: scale(1.15);
+}
+
+.color-dot.selected {
+  border-color: #1c1b1b;
+  box-shadow: 0 0 0 3px rgba(28, 27, 27, 0.15);
+  transform: scale(1.1);
+}
+
+/* === SKELETON LOADING === */
+.skeleton {
+  background: linear-gradient(90deg, #f0edec 25%, #e5e2e1 50%, #f0edec 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* === LABEL TAG STYLES === */
+.label-tag {
+  transition: all 0.15s ease;
+}
+
+.label-tag:hover {
+  filter: brightness(0.95);
+  transform: scale(1.05);
+}
+
+/* === SEARCH HIGHLIGHT === */
+mark {
+  background: #fff000;
+  color: #1c1b1b;
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+/* === EMPTY STATE === */
+.empty-state-icon {
+  font-size: 72px;
+  color: #ccc7aa;
+}
+
+/* === CHECKLIST === */
+.checklist-item-done span {
+  text-decoration: line-through;
+  color: #7b785f;
+}
+
+/* === SIDE MENU === */
+.side-menu-overlay {
+  animation: overlayFadeIn 0.2s ease-out forwards;
+}
+
+.side-menu-panel {
+  animation: menuSlideIn 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes menuSlideIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+.side-menu-closing .side-menu-panel {
+  animation: menuSlideOut 0.25s ease-in forwards;
+}
+
+.side-menu-closing.side-menu-overlay {
+  animation: overlayFadeOut 0.25s ease-in forwards;
+}
+
+@keyframes menuSlideOut {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+@keyframes overlayFadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
