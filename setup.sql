@@ -40,6 +40,7 @@ CREATE INDEX IF NOT EXISTS idx_notes_updated_at ON notes(updated_at DESC);
 ALTER TABLE notes ENABLE ROW LEVEL SECURITY;
 ALTER TABLE profiles ENABLE ROW LEVEL SECURITY;
 
+-- Policy: gli utenti possono vedere solo le proprie note
 CREATE POLICY "Users can view own notes" ON notes
   FOR SELECT USING (auth.uid() = user_id);
 
@@ -52,6 +53,7 @@ CREATE POLICY "Users can update own notes" ON notes
 CREATE POLICY "Users can delete own notes" ON notes
   FOR DELETE USING (auth.uid() = user_id);
 
+-- Policy: gli utenti possono vedere/modificare il proprio profilo
 CREATE POLICY "Users can view own profile" ON profiles
   FOR SELECT USING (auth.uid() = id);
 
@@ -71,6 +73,7 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql SECURITY DEFINER;
 
+-- Elimina trigger se esiste già
 DROP TRIGGER IF EXISTS on_auth_user_created ON auth.users;
 
 CREATE TRIGGER on_auth_user_created

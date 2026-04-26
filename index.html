@@ -112,7 +112,9 @@
 
 <body class="bg-background font-body-md text-on-background min-h-screen">
   
-  <!-- LOADING SCREEN -->
+  <!-- ==================== -->
+  <!-- LOADING SCREEN       -->
+  <!-- ==================== -->
   <div id="loading-screen" class="fixed inset-0 bg-background z-[9999] flex flex-col items-center justify-center gap-4">
     <div class="w-14 h-14 bg-primary-container rounded-xl flex items-center justify-center shadow-lg animate-bounce">
       <span class="material-symbols-outlined text-on-primary-container text-3xl">edit_note</span>
@@ -120,13 +122,17 @@
     <p class="font-headline-md text-headline-md tracking-tighter text-on-surface animate-pulse">Notes</p>
   </div>
 
-  <!-- TOAST NOTIFICATIONS -->
+  <!-- ==================== -->
+  <!-- TOAST NOTIFICATIONS  -->
+  <!-- ==================== -->
   <div id="toast-container" class="fixed top-6 right-6 z-[9999] flex flex-col gap-3"></div>
 
-  <!-- APP CONTAINER -->
+  <!-- ==================== -->
+  <!-- APP CONTAINER        -->
+  <!-- ==================== -->
   <div id="app"></div>
 
-  <!-- Background Decorative Elements -->
+  <!-- Background Decorative Elements (always visible on auth pages) -->
   <div id="auth-bg-decor" class="hidden">
     <div class="fixed top-[10%] -left-20 w-64 h-64 bg-secondary/5 rounded-full blur-3xl -z-10"></div>
     <div class="fixed bottom-[10%] -right-20 w-80 h-80 bg-primary-container/10 rounded-full blur-3xl -z-10"></div>

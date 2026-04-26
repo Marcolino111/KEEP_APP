@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Join Vivid Note</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f6f3f2",
+                        "inverse-surface": "#313030",
+                        "on-secondary-fixed": "#001356",
+                        "on-tertiary-fixed": "#022100",
+                        "on-surface-variant": "#4a4731",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#ebe7e7",
+                        "on-background": "#1c1b1b",
+                        "surface-container": "#f0edec",
+                        "secondary": "#0040e0",
+                        "inverse-primary": "#d7ca00",
+                        "inverse-on-surface": "#f3f0ef",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed-variant": "#095300",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#dcd9d9",
+                        "background": "#fcf9f8",
+                        "tertiary-fixed": "#79ff5b",
+                        "on-secondary-container": "#efefff",
+                        "on-secondary-fixed-variant": "#0035be",
+                        "on-tertiary-container": "#137b00",
+                        "tertiary-container": "#b4ff9b",
+                        "surface-variant": "#e5e2e1",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#736c00",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "surface": "#fcf9f8",
+                        "primary-fixed": "#f5e700",
+                        "secondary-container": "#2e5bff",
+                        "tertiary-fixed-dim": "#2ae500",
+                        "surface-bright": "#fcf9f8",
+                        "primary": "#676000",
+                        "primary-fixed-dim": "#d7ca00",
+                        "on-primary-fixed": "#1f1c00",
+                        "primary-container": "#fff000",
+                        "surface-container-highest": "#e5e2e1",
+                        "outline": "#7b785f",
+                        "outline-variant": "#ccc7aa",
+                        "secondary-fixed": "#dde1ff",
+                        "tertiary": "#106e00",
+                        "on-surface": "#1c1b1b",
+                        "secondary-fixed-dim": "#b8c3ff",
+                        "surface-tint": "#676000",
+                        "on-primary-fixed-variant": "#4d4800"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "margin-mobile": "20px",
+                        "md": "16px",
+                        "unit": "4px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "gutter-mobile": "12px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Spline Sans"],
+                        "body-md": ["Spline Sans"],
+                        "body-lg": ["Spline Sans"],
+                        "headline-md": ["Spline Sans"],
+                        "display-lg": ["Spline Sans"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .digital-highlighter {
+            box-shadow: inset 0 -0.4em 0 0 #fff000;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background font-body-md text-on-background min-h-screen flex flex-col">
+<!-- Hero Content & Registration Canvas -->
+<main class="flex-grow flex flex-col items-center justify-center px-margin-mobile py-xl md:py-0">
+<div class="w-full max-w-[440px] space-y-xl">
+<!-- Branding & Welcome -->
+<header class="space-y-md text-center md:text-left">
+<div class="inline-flex items-center justify-center md:justify-start gap-sm">
+<div class="w-10 h-10 bg-primary-container rounded-xl flex items-center justify-center shadow-[0_4px_20px_rgba(0,64,224,0.1)]">
+<span class="material-symbols-outlined text-on-primary-container" data-icon="edit_note">edit_note</span>
+</div>
+<span class="font-headline-md text-headline-md tracking-tighter">Notes</span>
+</div>
+<div class="space-y-xs">
+<h1 class="font-display-lg text-display-lg text-on-surface leading-tight">Cattura le tue <br/>
+<span class="digital-highlighter">idee più brillanti.</span></h1>
+<p class="font-body-lg text-body-lg text-outline">Unisciti alla community di menti creative.</p>
+</div>
+</header>
+<!-- Registration Form Card -->
+<div class="bg-white rounded-[32px] p-8 md:p-10 border border-surface-variant shadow-[0_20px_50px_rgba(0,64,224,0.05)] relative overflow-hidden">
+<!-- Decorative Corner Accent -->
+<div class="absolute top-0 right-0 w-24 h-24 bg-tertiary-container/20 rounded-bl-full -mr-8 -mt-8"></div>
+<form class="space-y-lg relative z-10">
+<!-- Name Field -->
+<div class="space-y-xs">
+<label class="font-label-sm text-label-sm text-outline uppercase ml-1">Nome Completo</label>
+<div class="relative group">
+<input class="w-full bg-surface-container-low border-b-2 border-transparent focus:border-secondary transition-all duration-200 outline-none px-xs py-md font-body-md text-on-surface placeholder:text-outline-variant" placeholder="Alex Rivera" type="text"/>
+</div>
+</div>
+<!-- Email Field -->
+<div class="space-y-xs">
+<label class="font-label-sm text-label-sm text-outline uppercase ml-1">Indirizzo Email</label>
+<div class="relative group">
+<input class="w-full bg-surface-container-low border-b-2 border-transparent focus:border-secondary transition-all duration-200 outline-none px-xs py-md font-body-md text-on-surface placeholder:text-outline-variant" placeholder="hello@creative.com" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="space-y-xs">
+<label class="font-label-sm text-label-sm text-outline uppercase ml-1">Password</label>
+<div class="relative group">
+<input class="w-full bg-surface-container-low border-b-2 border-transparent focus:border-secondary transition-all duration-200 outline-none px-xs py-md font-body-md text-on-surface placeholder:text-outline-variant" placeholder="••••••••" type="password"/>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-outline cursor-pointer hover:text-on-surface" data-icon="visibility">visibility</span>
+</div>
+</div>
+<!-- CTA Button -->
+<div class="pt-md">
+<button class="w-full bg-primary-container text-on-primary-container font-headline-md text-headline-md py-lg rounded-2xl shadow-[0_4px_0_0_#736c00] active:shadow-none active:translate-y-[4px] transition-all duration-75 flex items-center justify-center gap-md" type="submit">Registrati <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span></button>
+</div>
+<p class="text-center font-label-sm text-label-sm text-outline pt-sm">Hai già un account? <a class="text-secondary font-bold hover:underline" href="#">Accedi</a></p>
+</form>
+</div>
+<!-- Social Proof / Decorative Element -->
+<div class="grid grid-cols-3 gap-gutter-mobile">
+<div class="bg-surface-container rounded-2xl p-md flex flex-col items-center justify-center space-y-sm">
+<span class="material-symbols-outlined text-secondary" data-icon="bolt">bolt</span>
+<span class="font-label-sm text-label-sm text-on-surface text-center">Sincronizzazione Rapida</span>
+</div>
+<div class="bg-surface-container rounded-2xl p-md flex flex-col items-center justify-center space-y-sm">
+<span class="material-symbols-outlined text-tertiary" data-icon="palette">palette</span>
+<span class="font-label-sm text-label-sm text-on-surface text-center">Temi Personalizzati</span>
+</div>
+<div class="bg-surface-container rounded-2xl p-md flex flex-col items-center justify-center space-y-sm">
+<span class="material-symbols-outlined text-primary" data-icon="lock_open">lock_open</span>
+<span class="font-label-sm text-label-sm text-on-surface text-center">Archiviazione Sicura</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Meta -->
+<footer class="py-lg px-margin-mobile flex justify-center border-t border-surface-variant bg-white">
+<div class="flex items-center gap-xl text-outline font-label-sm text-label-sm">
+<a class="hover:text-on-surface transition-colors" href="#">Privacy</a>
+<a class="hover:text-on-surface transition-colors" href="#">Termini</a>
+<a class="hover:text-on-surface transition-colors" href="#">Supporto</a>
+</div>
+</footer>
+<!-- Background Decorative Elements -->
+<div class="fixed top-[10%] -left-20 w-64 h-64 bg-secondary/5 rounded-full blur-3xl -z-10"></div>
+<div class="fixed bottom-[10%] -right-20 w-80 h-80 bg-primary-container/10 rounded-full blur-3xl -z-10"></div>
+</body></html>

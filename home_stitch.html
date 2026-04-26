@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f6f3f2",
+                        "inverse-surface": "#313030",
+                        "on-secondary-fixed": "#001356",
+                        "on-tertiary-fixed": "#022100",
+                        "on-surface-variant": "#4a4731",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#ebe7e7",
+                        "on-background": "#1c1b1b",
+                        "surface-container": "#f0edec",
+                        "secondary": "#0040e0",
+                        "inverse-primary": "#d7ca00",
+                        "inverse-on-surface": "#f3f0ef",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed-variant": "#095300",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#dcd9d9",
+                        "background": "#fcf9f8",
+                        "tertiary-fixed": "#79ff5b",
+                        "on-secondary-container": "#efefff",
+                        "on-secondary-fixed-variant": "#0035be",
+                        "on-tertiary-container": "#137b00",
+                        "tertiary-container": "#b4ff9b",
+                        "surface-variant": "#e5e2e1",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#736c00",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "surface": "#fcf9f8",
+                        "primary-fixed": "#f5e700",
+                        "secondary-container": "#2e5bff",
+                        "tertiary-fixed-dim": "#2ae500",
+                        "surface-bright": "#fcf9f8",
+                        "primary": "#676000",
+                        "primary-fixed-dim": "#d7ca00",
+                        "on-primary-fixed": "#1f1c00",
+                        "primary-container": "#fff000",
+                        "surface-container-highest": "#e5e2e1",
+                        "outline": "#7b785f",
+                        "outline-variant": "#ccc7aa",
+                        "secondary-fixed": "#dde1ff",
+                        "tertiary": "#106e00",
+                        "on-surface": "#1c1b1b",
+                        "secondary-fixed-dim": "#b8c3ff",
+                        "surface-tint": "#676000",
+                        "on-primary-fixed-variant": "#4d4800"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "margin-mobile": "20px",
+                        "md": "16px",
+                        "unit": "4px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "gutter-mobile": "12px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Spline Sans"],
+                        "body-md": ["Spline Sans"],
+                        "body-lg": ["Spline Sans"],
+                        "headline-md": ["Spline Sans"],
+                        "display-lg": ["Spline Sans"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+        @media (min-width: 768px) {
+            .masonry-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        @media (min-width: 1024px) {
+            .masonry-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background font-body-md text-on-background selection:bg-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white dark:bg-stone-900 border-b-2 border-stone-100 dark:border-stone-800 shadow-[0_4px_20px_rgba(0,119,255,0.1)] flex justify-between items-center px-5 py-4">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-stone-900 dark:text-stone-50 hover:bg-stone-50 dark:hover:bg-stone-800 p-2 rounded-full transition-colors active:translate-y-0.5" data-icon="menu">menu</button>
+<h1 class="text-2xl font-black tracking-tighter text-stone-900 dark:text-stone-50 font-['Spline_Sans']">Note</h1>
+</div>
+<div class="flex items-center gap-3">
+<button class="material-symbols-outlined text-stone-900 dark:text-stone-50 p-2 hover:bg-stone-50 dark:hover:bg-stone-800 rounded-full transition-colors" data-icon="search">search</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container shadow-sm">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="vibrant digital illustration of a smiling profile avatar with colorful abstract geometric shapes in the background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRhMg6YcV9kW1642K82aUwF9mGCM654ub0pdRWk82d5deYANmftyYqrwCxnsvyK_IZjHjIFTGf43R5pNcYyppmku9ozwjtTg3bZt4FbHODVRDGSUqYJwVxl3DyHFaFuw2HnC2saMDFci_ZzEv_jatEa05zxr_0FXnzsXa_BSWpbpOFM2nR3VGuxkH9NknUf-WS0gG5-swBEPCdVPZaNXHSsjfCGAon-YJlA-LhEe2Uia4IqARpLk3VcOdfiTXFZh4sNs9hOaRpSQc"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-24 pb-32 px-margin-mobile max-w-7xl mx-auto">
+<!-- Search Bar Section (Sticky-like behavior or prominent top placement) -->
+<div class="mb-8">
+<div class="relative group">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline" data-icon="search">search</span>
+</div>
+<input class="w-full bg-surface-container-low border-b-2 border-outline-variant focus:border-secondary focus:ring-0 rounded-t-xl px-12 py-4 font-body-lg transition-all outline-none" placeholder="Cerca tra le tue note..." type="text"/>
+</div>
+</div>
+<!-- Staggered Note Grid -->
+<div class="masonry-grid">
+<!-- Note Card 1: Urgent/Primary -->
+<div class="bg-white border-2 border-stone-100 rounded-2xl p-lg shadow-sm hover:shadow-md hover:border-secondary transition-all active:scale-95 cursor-pointer flex flex-col gap-sm">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-md text-stone-900 leading-tight">Lista della Spesa 🍎</h3>
+<span class="material-symbols-outlined text-stone-400" data-icon="push_pin">push_pin</span>
+</div>
+<p class="text-on-surface-variant font-body-md line-clamp-4">
+                    - Latte d'avena (molto cremoso)<br/>
+                    - Pane a lievitazione naturale<br/>
+                    - Avocado (controlla la maturazione)<br/>
+                    - Cioccolato fondente 85%
+                </p>
+<div class="mt-4 flex flex-wrap gap-xs">
+<span class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full text-label-sm font-label-sm">SPESA</span>
+</div>
+</div>
+<!-- Note Card 2: Secondary/Project -->
+<div class="bg-white border-2 border-stone-100 rounded-2xl p-lg shadow-sm hover:shadow-md hover:border-secondary transition-all active:scale-95 cursor-pointer flex flex-col gap-sm">
+<h3 class="font-headline-md text-stone-900 leading-tight">Cronologia Progetto Alpha</h3>
+<p class="text-on-surface-variant font-body-md">Fase 1: Wireframe e asset di branding. Fase 2: Integrazione React e hook API. Revisione finale entro venerdì prossimo!</p>
+<div class="mt-4 flex flex-wrap gap-xs">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-sm font-label-sm">LAVORO</span>
+<span class="bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full text-label-sm font-label-sm">URGENTE</span>
+</div>
+</div>
+<!-- Note Card 3: Image Note -->
+<div class="bg-white border-2 border-stone-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-secondary transition-all active:scale-95 cursor-pointer">
+<img alt="Inspiration" class="w-full h-48 object-cover" data-alt="aesthetic close-up of lush green plant leaves with morning dew and soft natural sunlight filtering through" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUbyJkZUvYt3jk0NqmCJbukrD6cA5mr07osVtFY_HAQAGDxGQ2WM7yKPsLSqWDUUVA1zak1zzwyidqM1215V80rRTGo5NtnAb9wGXcWiW998KGNGnt1niRp02outZP0wycH3QKVDa0EBw1-tAPv81IGUYPs7SUye3nmuH3bvnLbwQ_a2pu2KbgTfCVwabFwkQzoma1DLEDcNpjgPF90OWgf1D8KANbkyxfDckBOM0smxEkqOAZ3RNtJvU9TyYTFQWnBPTVnsUoXVQ"/>
+<div class="p-lg flex flex-col gap-sm">
+<h3 class="font-headline-md text-stone-900 leading-tight">Ispirazione Soggiorno</h3>
+<p class="text-on-surface-variant font-body-md">Luce naturale, mobili minimalisti e tante piante da interno. Usa i terrari!</p>
+</div>
+</div>
+<!-- Note Card 4: Short Snippet -->
+<div class="bg-primary-container border-2 border-primary rounded-2xl p-lg shadow-[0_4px_10px_rgba(103,96,0,0.15)] hover:shadow-md transition-all active:scale-95 cursor-pointer">
+<h3 class="font-headline-md text-on-primary-fixed leading-tight">Chiama Mamma! 📞</h3>
+<p class="text-on-primary-container font-body-md mt-2">Ricordale i piani per il brunch del fine settimana alle 11:00.</p>
+</div>
+<!-- Note Card 5: Long Content -->
+<div class="bg-white border-2 border-stone-100 rounded-2xl p-lg shadow-sm hover:shadow-md hover:border-secondary transition-all active:scale-95 cursor-pointer flex flex-col gap-sm">
+<h3 class="font-headline-md text-stone-900 leading-tight">Libri Consigliati</h3>
+<p class="text-on-surface-variant font-body-md">
+                    1. Piccole Abitudini - James Clear<br/>
+                    2. L'atto Creativo - Rick Rubin<br/>
+                    3. Pensieri Lenti e Veloci<br/>
+                    4. Dune: Parte Due (Riferimento visivo)<br/>
+                    5. Tomorrow, and Tomorrow, and Tomorrow
+                </p>
+<div class="mt-4 flex flex-wrap gap-xs">
+<span class="bg-surface-variant text-on-surface-variant px-3 py-1 rounded-full text-label-sm font-label-sm">LIBRI</span>
+</div>
+</div>
+<!-- Note Card 6: Checklist -->
+<div class="bg-white border-2 border-stone-100 rounded-2xl p-lg shadow-sm hover:shadow-md hover:border-secondary transition-all active:scale-95 cursor-pointer">
+<h3 class="font-headline-md text-stone-900 leading-tight mb-md">Routine Mattutina</h3>
+<div class="space-y-2">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="check_box">check_box</span>
+<span class="font-body-md text-on-surface">Meditazione (10 min)</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-stone-300 text-lg" data-icon="check_box_outline_blank">check_box_outline_blank</span>
+<span class="font-body-md text-on-surface-variant line-through">Controlla le email</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-lg" data-icon="check_box">check_box</span>
+<span class="font-body-md text-on-surface">Innaffia le piante</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- FAB: Create New Note -->
+<button class="fixed bottom-24 right-lg w-16 h-16 bg-tertiary-fixed text-on-tertiary-fixed rounded-full flex items-center justify-center shadow-[0_8px_30px_rgba(0,64,224,0.15)] hover:scale-110 active:scale-95 active:shadow-none transition-all z-50">
+<span class="material-symbols-outlined text-4xl" data-icon="add">add</span>
+</button>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 pb-safe bg-white dark:bg-stone-900 border-t border-stone-100 dark:border-stone-800 shadow-[0_-4px_20px_rgba(0,119,255,0.1)] z-50">
+<!-- Active Item: Notes -->
+<button class="flex flex-col items-center justify-center bg-yellow-400 dark:bg-yellow-400 text-stone-900 rounded-xl px-4 py-1 active:scale-95 transition-transform duration-150 group">
+<span class="material-symbols-outlined" data-icon="grid_view" data-weight="fill" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="font-['Spline_Sans'] text-[11px] font-semibold uppercase tracking-wider mt-1">Note</span>
+</button>
+<!-- Inactive: Search -->
+<button class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-4 py-1 hover:text-stone-900 dark:hover:text-stone-100 active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-['Spline_Sans'] text-[11px] font-semibold uppercase tracking-wider mt-1">Cerca</span>
+</button>
+<!-- Inactive: Labels -->
+<button class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-4 py-1 hover:text-stone-900 dark:hover:text-stone-100 active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="label">label</span>
+<span class="font-['Spline_Sans'] text-[11px] font-semibold uppercase tracking-wider mt-1">Etichette</span>
+</button>
+<!-- Inactive: Archive -->
+<button class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 px-4 py-1 hover:text-stone-900 dark:hover:text-stone-100 active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="archive">archive</span>
+<span class="font-['Spline_Sans'] text-[11px] font-semibold uppercase tracking-wider mt-1">Archivio</span>
+</button>
+</nav>
+</body></html>
