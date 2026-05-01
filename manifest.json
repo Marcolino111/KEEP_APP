@@ -2,7 +2,7 @@
   "name": "Vivid Note",
   "short_name": "Notes",
   "description": "Cattura le tue idee più brillanti con Vivid Note.",
-  "start_url": "/",
+  "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#fcf9f8",
   "theme_color": "#fcf9f8",
@@ -11,7 +11,13 @@
       "src": "images/image.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "images/image.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }
