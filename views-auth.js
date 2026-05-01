@@ -80,7 +80,7 @@ function loginView() {
       <span class="font-headline-md text-headline-md tracking-tighter">Notes</span>
     </div>
     <div class="space-y-xs">
-      <h1 class="font-display-lg text-display-lg text-on-surface leading-tight">Bear<br/><span class="digital-highlighter">Notes.</span></h1>
+      <h1 class="font-display-lg text-display-lg text-on-surface leading-tight">Bear Notes</h1>
       <p class="font-body-lg text-body-lg text-outline">Accedi per continuare a catturare le tue idee.</p>
     </div>
   </header>
